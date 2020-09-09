@@ -8,6 +8,7 @@ import java.io.InputStreamReader;
 import java.io.IOException;
 
 
+
 public class Baek1260 {
 	public static void main(String[] args){
 		try{
@@ -85,6 +86,10 @@ public class Baek1260 {
 					visited[i] = true;
 				}
 			}	
-		}		
+		}
+		
 	}
 }
+
+
+
