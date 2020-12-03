@@ -10,13 +10,31 @@ class Edge{
 	}
 }
 
-class Main{
+class Baek11779{
+	public static int howMany(int start, int end, int[] where){
+		int i = 1;
+		int tmp = end;
+		while(tmp != start){
+			tmp = where[tmp];
+			i++;
+		}
+		return i;
+	}
+	public static void print(int start, int end,int[] where){
+		if(start == end){
+			System.out.print(start + " ");
+		} else {
+			print(start,where[end],where);
+			System.out.print(end + " ");
+		}
+	}
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int inf = 10000001;
+		int inf = 987654321;
 		int n = sc.nextInt();
 		int m = sc.nextInt();
 		int dist[] = new int[n+1];
+		int where[] = new int[n+1];
 		boolean visited[] = new boolean[n+1];
 		for(int i = 0; i < n+1; i++){
 			dist[i] = inf;
@@ -38,6 +56,7 @@ class Main{
 		int start = sc.nextInt();
 		int end = sc.nextInt();
 		dist[start] = 0;
+		visited[0] = true;
 
 		for(int k = 0; k < n-1; k++){
 			int min = inf;
@@ -53,9 +72,14 @@ class Main{
 			for(Edge y : bus[min_node]){
 				if(dist[y.v] > dist[min_node] + y.cost){
 					dist[y.v] = dist[min_node] + y.cost;
+					where[y.v] = min_node;
 				}
 			}
 		}
 		System.out.println(dist[end]);
+		System.out.println(howMany(start,end,where));
+		print(start,end,where);
+		System.out.println("");
+
 	}
 }
