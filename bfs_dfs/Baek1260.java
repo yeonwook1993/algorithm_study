@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Baek1260{
+class Main{
 	public static void bfs(int[][] a, boolean[] visit, int V){
 		Queue<Integer> q = new LinkedList<>();
 		q.offer(V);

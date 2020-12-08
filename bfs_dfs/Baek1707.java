@@ -8,7 +8,6 @@ class Baek1707{
 				}
 			}
 		}
-		return true;
 	}
 	static void bfs(ArrayList<Integer>[] a, int V, int[] group){
 		boolean[] visit = new boolean[V+1];
@@ -52,23 +51,17 @@ class Baek1707{
 				a[x].add(y);
 				a[y].add(x);
 			}
-			bfs(a,V,group);
-			// for(int i = 1; i < a.length; i++){
-			// 	if(group[i] == 1){
-			// 		System.out.println(i + " is red group");
-			// 	}
-			// 	if(group[i] == 2){
-			// 		System.out.println(i + " is blue group");
-			// 	}
-			// }
 			if(check(a,group)){
-				System.out.println("YES");
-			} else {
-				System.out.println("NO");
+				if(flag) {
+					System.out.println("YES");
+				} else {
+					System.out.println("NO");
+				}
 			}
 		}
 	}
 }
+
 
 
 
@@ -112,7 +105,7 @@ class Baek1707{
 // 			int E = sc.nextInt();
 // 			ArrayList<Integer>[] a = new ArrayList[V+1];
 // 			int[] group = new int[V+1];
-			
+
 // 			for(int i = 1; i <= V; i ++){
 // 				a[i] = new ArrayList<>();
 // 			}
@@ -132,3 +125,5 @@ class Baek1707{
 // 		}
 // 	}
 // }
+	=======
+	>>>>>>> 12d92cdaadd436fcaef17b6fc2dda6f96ec1efa9
